@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slideshow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="slideshow" class="slideshow">
+    <button id="prev" class="nav left" aria-label="Anterior">&#10094;</button>
+    <div class="frame">
+      <img id="slideImage" src="" alt="slide">
+      <div id="caption" class="caption"></div>
+    </div>
+    <button id="next" class="nav right" aria-label="Siguiente">&#10095;</button>
+  </div>
+
+  <div class="controls">
+    <label><input id="autoplay" type="checkbox" checked> Autoplay</label>
+    Intervalo: <input id="interval" type="number" min="1" value="5"> s
+    <button id="fullscreen">Pantalla completa</button>
+  </div>
+
+  <script src="slideshow.js"></script>
+</body>
+</html>
