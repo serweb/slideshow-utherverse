@@ -1,5 +1,5 @@
 :root{
-  --bg:#111;
+  --bg:#red;
   --fg:#fff;
   --accent: #1e90ff;
 }
