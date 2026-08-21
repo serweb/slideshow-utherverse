@@ -1,8 +1,15 @@
 // Lista estática de imágenes (rutas relativas). Modifica aquí agregando tus archivos en assets/slides/
-const images = [
-  "assets/slides/20251007_125013.jpg",
- 
-];
+let images = [];
+async function loadImages() {
+  const response = await fetch("slides.txt");
+  const text = await response.text();
+
+  images = text
+  .split(/\r?\n/)
+  .map(line => line.trim())
+  .filter(line => line.length > 0)
+  .map(filename => `assets/slides/${filename}`);
+}
 
 const captions = [
   "Descripción 1",
@@ -88,10 +95,17 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Inicialización
-preloadAll();
-if(images.length === 0){
-  imgEl.alt = "No hay imágenes en la lista. Añade rutas en slideshow.js";
-} else {
-  show(0);
-  if(autoplayCheckbox.checked) startAutoplay();
+async function init() {
+  await loadImages();
+
+  preloadAll();
+
+  if(images.length === 0){
+    imgEl.alt = "No hay imágenes en slides.txt";
+  } else {
+    show(0);
+    if(autoplayCheckbox.checked) startAutoplay();
+  }
 }
+
+init();
