@@ -1,8 +1,7 @@
 // Lista estática de imágenes (rutas relativas). Modifica aquí agregando tus archivos en assets/slides/
 const images = [
-  "assets/slides/slide1.jpg",
-  "assets/slides/slide2.jpg",
-  "assets/slides/slide3.jpg"
+  "assets/slides/20251007_125013.jpg",
+ 
 ];
 
 const captions = [
